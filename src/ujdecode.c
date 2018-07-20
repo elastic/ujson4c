@@ -789,6 +789,11 @@ UJObject UJDecode(const char *input, size_t cbInput, UJHeapFuncs *hf, void **out
 		decoder.realloc = realloc;
 		cbInitialHeap = 16384;
 		initialHeap = malloc(cbInitialHeap);
+
+		if (initialHeap == NULL)
+		{
+			return NULL;
+		}
 	}
 	else
 	{
